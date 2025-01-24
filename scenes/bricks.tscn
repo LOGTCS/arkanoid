@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://x0vd4sqstlgj"]
+
+[ext_resource type="Script" path="res://scenes/brick.gd" id="1_rkdfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv02a"]
+size = Vector2(40, 24)
+
+[node name="Bricks" type="StaticBody2D" groups=["removable"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_rkdfd")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(1.66667, 3)
+color = Color(0.370863, 0.511179, 0.952542, 1)
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 8, 0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 12)
+shape = SubResource("RectangleShape2D_yv02a")

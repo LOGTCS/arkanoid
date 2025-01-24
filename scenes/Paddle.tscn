@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvxwvxwa2ds5s"]
+
+[ext_resource type="Script" path="res://scripts/paddle.gd" id="1_dftk3"]
+[ext_resource type="PackedScene" uid="uid://cj4ocia1o6j2u" path="res://scenes/Ball.tscn" id="2_e3o3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1sku"]
+size = Vector2(64, 16)
+
+[node name="Paddle" type="CharacterBody2D"]
+collision_mask = 8
+script = ExtResource("1_dftk3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f1sku")
+
+[node name="polygon" type="Polygon2D" parent="."]
+scale = Vector2(0.266667, 0.5)
+color = Color(0.099986, 0.099986, 0.099986, 1)
+polygon = PackedVector2Array(-120, -16, 5.21739, -16, 120, -16, 120, 5.33333, 120, 16, 0, 16, -120, 16, -120, -0.40535)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="Ball" parent="." instance=ExtResource("2_e3o3j")]
+position = Vector2(0, -16)
